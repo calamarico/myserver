@@ -1,0 +1,15 @@
+{
+  "subdomain": "calamarico",
+  "scripts": {
+    "start": "start.js"
+  },
+  "version": "0.0.0-5",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "name": "myotherserver",
+  "dependencies": {
+    "memory-cache": "*",
+    "clone": "*"
+  }
+}
