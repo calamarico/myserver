@@ -8,7 +8,7 @@ exports.start = function(route, handle) {
 	var app = connect()
   		.use(connect.favicon())
   		.use(connect.logger('dev'))
-      //.use(kalamarAuth())
+      .use(kalamarAuth())
   		.use(function(request, response){
     		  
         var dataPosteada = "";
