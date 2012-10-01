@@ -1,5 +1,4 @@
-var nano = require('nano')('http://localhost:5984')
- 	, db     = server.use('myserverapp');
+var connector = require('./cpersistence');
 var usersBBDD = {
 	"dani" : "calamar",
 	"bea"  : "guapisima"
@@ -23,8 +22,10 @@ module.exports = function cauthSetup() {
 								response.writeHead(401, {'content-type':'text/plain'});
 			 					response.end("Login incorrect");
 							}
+						}
 						else if(request.method === "PUT") {
-
+							connector.checkUser(objResult["user"]);
+							console.log(checkUser);
 						}
 					}
 				}

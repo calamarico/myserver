@@ -2,7 +2,7 @@ var connect = require('connect');
 var http = require('http');
 var url = require('url');
 var kalamarAuth = require('./cauth');
-var kalamarSession = require('./csession');
+var csession = require('sesh').magicSession();
 
 exports.start = function(route, handle) {
 	var app = connect()
