@@ -6,7 +6,7 @@ function handleResource(request, response, chunk) {
 	function sendMsg(obj) {
 		var userOrigin = Object.create(users.User);
 		userOrigin.setName(origin);
-		
+
 		if(userOrigin.fetch()) {
 			var userDestination = Object.create(users.User);
 			userDestination.setName(obj.destination);
@@ -25,7 +25,7 @@ function handleResource(request, response, chunk) {
 	};
 
 	function pull(obj) {
-		var userOrigin = Object.create(users.User);
+		var userOrigin = Object.create(users);
 		userOrigin.setName(origin);
 		if(userOrigin.fetch()) {
 			var jsonString = JSON.stringify(userOrigin.getMessages());
@@ -59,7 +59,7 @@ function handleResource(request, response, chunk) {
 			 				response.writeHead(401, {'content-type':'text/plain'});
 			 				response.end("The message could not be sent")
 			 			}
-			 		} 
+			 		}
 			 		else {
 			 			//pull
 			 			var resultPull = pull(objResult);

@@ -1,4 +1,5 @@
 // Calamar's server
+
 var server = require('./mserver');
 var router = require('./router');
 var handle = require('./handle');
@@ -6,11 +7,12 @@ var cache = require('memory-cache');
 var users = require('./user.js');
 
 //Initialize users
-var usuarioDani = Object.create(users.User);
+var usuarioDani = Object.create(users);
 usuarioDani.name = 'dani';
+
 usuarioDani.messages = [ { "origin": "peter", "text":"Cuanto tiempo, soy Peter"}, {"origin":"barbara", "text":"Como estamos?"}];
 
-var usuarioBea = Object.create(users.User);
+var usuarioBea = Object.create(users);
 usuarioBea.name = 'bea';
 usuarioBea.messages = [];
 

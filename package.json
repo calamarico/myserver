@@ -1,15 +1,19 @@
 {
-  "subdomain": "calamarico",
+  "subdomain": "kalamarico",
   "scripts": {
     "start": "start.js"
   },
-  "version": "0.0.0-5",
+  "version": "0.0.0-6",
   "engines": {
     "node": "0.8.x"
   },
-  "name": "myotherserver",
+  "name": "connectapp",
   "dependencies": {
     "memory-cache": "*",
-    "clone": "*"
+    "clone": "*",
+    "connect": "*",
+    "nano": "*",
+    "sesh": "*",
+    "eyes": "*"
   }
 }
