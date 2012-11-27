@@ -14,8 +14,7 @@ exports.routeRequest = function(request, response, handle) {
 	console.info(request.headers);
 
 	if (request.method === 'GET') {
-		var url = decodeURI(request.url);
-		console.log('request url:' + url);
+		var url = (decodeURI(request.url) === '/') ? 'index.html' : decodeURI(request.url);
 		fs.readFile('webApp/' + path.basename(url), function(err, data) {
 			if (err) {
 				console.log('Error al encontrar fichero:' +
