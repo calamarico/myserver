@@ -1,15 +1,20 @@
 var cache = require('memory-cache');
 var clone = require('clone');
+var persistence = require('./cpersistence.js');
 
-exports.save = function() {
-	var obj = {};
-	obj.messages = this.messages;
-	obj.name = this.name;
-	cache.put(this.name, obj);
+save = function() {
+	// var obj = {};
+	// obj.messages = this.messages;
+	// obj.name = this.name;
+	// cache.put(this.name, obj);
+	console.log('persistence;');
+	console.log(persistence);
+	persistence.createUser(this.nick, this);
 };
 
 exports.getMessages = function() {
-	var messages = clone(this.messages);
+	//var messages = clone(this.messages);
+	var obj = thi
 	this.messages = [];
 	this.save();
 	return messages;
@@ -30,7 +35,9 @@ exports.addMessage = function(obj) {
 	this.messages.push(obj);
 	this.save();
 };
-exports.setName = function(name) {
-	this.name = name;
-	return this;
+exports.set = function(obj) {
+	this.nick = obj.nick;
+	this.identity = obj.identity;
+	this.inbox = obj.inbox;
+	//save();
 };
